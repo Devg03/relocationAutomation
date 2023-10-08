@@ -1,11 +1,22 @@
-import observer
+import shutil
 import os
 
-from dotenv import load_dotenv
+path = "/home/wildwolf/Downloads/"
 
-load_dotenv()
+# Collects the lists of files available in PATH
+files = os.listdir(path)
 
-files = os.listdir(os.getenv('PATH'))
-filename = files[0]
+def main():
+    counter = len(files)
+    num = 0
+    while num < counter:
 
-print(filename)
+        file = os.path.split(files[0])
+        dir = str(file[0])
+        file_name = str(file[1])
+
+        name, ext = os.path.splitext(file_name)
+
+        
+if __name__ == '__main__':
+    main()
